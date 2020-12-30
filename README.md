@@ -9,6 +9,7 @@ Edit settings at the top of `google_voice.py` before running
 - `include_ogg` - Include "ogg" in TTS
 - `include_full_path` - Include the full folder path in TTS
 - `include_last_folder` - Include the last folder in the path in TTS for extra context (Ignored if include_full_path is True)
+- `language` - TTS language. For a full list of supported languages, see https://github.com/pndurette/gTTS/blob/master/gtts/lang.py
 
 ## Usage
 1. Install `requirements.txt`
