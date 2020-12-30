@@ -19,7 +19,7 @@ MC_VERSION = os.listdir(MC_ASSETS+"/indexes/")[-1]
 print("Your latest installed version of minecraft is " + MC_VERSION[:-5] + "\n")
 
 # Change this if you want to put the sound files somewhere else
-OUTPUT_PATH = os.path.normpath(os.path.expandvars(os.path.expanduser(f"./Google_TTS/")))
+OUTPUT_PATH = os.path.normpath(os.path.expandvars(os.path.expanduser(f"./Google_TTS/assets/minecraft/")))
 
 # These are unlikely to change
 MC_OBJECT_INDEX = f"{MC_ASSETS}/indexes/{MC_VERSION}"

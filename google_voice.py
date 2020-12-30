@@ -28,10 +28,10 @@ def list_subdir_file(path):
 
 print("Replacing sounds\nThis will take a while")
 
-for file in list_subdir_file("./Google_TTS/sounds"):
+for file in list_subdir_file("./Google_TTS/assets/minecraft/sounds"):
     if file.endswith(".ogg"):
         lan = "en"
-        tts_input = file.replace("./Google_TTS/sounds", "").replace("_", " ").replace("\\", " ")
+        tts_input = file.replace("./Google_TTS/assets/minecraft/sounds", "").replace("_", " ").replace("\\", " ")
         if not include_ogg: # Exclude ogg
             tts_input = tts_input.replace(".ogg", "")
         else: # Include ogg but remove "."
