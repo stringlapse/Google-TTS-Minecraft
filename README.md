@@ -1,5 +1,7 @@
 # Google TTS Minecraft
 
+### A Minecraft resource pack that changes all sounds to Google TTS saying the names of the sounds
+
 Originally created by TheblueMan003 https://www.youtube.com/watch?v=ZCZP7JjQ6Aw
 
 ## Settings
