@@ -2,6 +2,13 @@ import os
 from gtts import gTTS
 from pydub import AudioSegment
 
+##########
+# Settings
+##########
+
+include_ogg = False # Include "ogg" in TTS
+include_full_path = False # Include the full folder path in TTS
+include_last_folder = True # Include the last folder in the path in TTS for extra context (Ignored if include_full_path is True)
 
 def list_subdir_file(path):
     directories = [path]
@@ -19,12 +26,28 @@ def list_subdir_file(path):
 
     return files
 
+print("Replacing sounds\nThis will take a while")
 
-for file in list_subdir_file("."):
+for file in list_subdir_file("./Google_TTS/sounds"):
     if file.endswith(".ogg"):
         lan = "en"
-        o = gTTS(text=file.replace(".", " ").replace("_", " ").replace(".ogg", " ").replace("/", " ").replace("\\", " "),lang=lan, slow=False)
+        tts_input = file.replace("./Google_TTS/sounds", "").replace("_", " ").replace("\\", " ")
+        if not include_ogg: # Exclude ogg
+            tts_input = tts_input.replace(".ogg", "")
+        else: # Include ogg but remove "."
+            tts_input = tts_input.replace(".", " ")
+        if not include_full_path: # Exclude full path
+            if not include_last_folder: # Exclude last folder
+                tts_input = tts_input[tts_input.rfind("/")+1:]
+            else: # Include last folder
+                tts_input = tts_input[tts_input.rfind("/", 0, tts_input.rfind("/"))+1:]
+        # Include full path doesn't remove anything else
+        tts_input = tts_input.replace("/", " ")
+
+        print(tts_input)
+        o = gTTS(text=tts_input,lang=lan, slow=False)
         o.save("tmp.mp3")
         sound = AudioSegment.from_mp3("tmp.mp3")
         sound.export(file, format="ogg")
 
+os.remove("tmp.mp3")
