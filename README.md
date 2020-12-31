@@ -11,9 +11,10 @@ There are pregenerated resource packs in [releases](https://github.com/stringlap
 1. Install `requirements.txt`
 2. Make sure `ffprobe` is in path
 3. Run `extract_sounds.py`
-4. Make changes to settings in `google_voice.py` then run it
-5. Copy the `Google_TTS` folder to `.minecraft/resourcepacks`
-6. Enable the resource pack in Minecraft and ...enjoy?
+4. (Optional) Change settings in `google_voice.py`
+5. Run `google_voice.py`
+6. Copy the `Google_TTS` folder to `.minecraft/resourcepacks`
+7. Enable the resource pack in Minecraft and ...enjoy?
 
 ## Settings
 Settings can be changed by editing `google_voice.py`
