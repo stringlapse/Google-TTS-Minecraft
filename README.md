@@ -4,6 +4,9 @@
 
 Originally created by TheblueMan003 https://www.youtube.com/watch?v=ZCZP7JjQ6Aw
 
+## Installing this resource pack
+There are pregenerated resource packs in [releases](https://github.com/stringlapse/Google-TTS-Minecraft/releases). To install one, download the zip file and extract the contained `Google_TTS` folder into `.minecraft/resourcepacks` then enable it in game.
+
 ## Generating a new resource pack
 1. Install `requirements.txt`
 2. Make sure `ffprobe` is in path
